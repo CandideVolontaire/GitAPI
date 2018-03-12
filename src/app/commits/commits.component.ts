@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Commit } from '../commit';
-import { COMMITS } from '../mock-commits';
+import { CommitService } from '../commit.service';
 
 @Component({
     selector: 'app-commits',
@@ -9,11 +9,17 @@ import { COMMITS } from '../mock-commits';
 })
 export class CommitsComponent implements OnInit {
 
-    commits = COMMITS;
+    selectedCommit: Commit;
+    commits: Commit[];
 
-    constructor() { }
+    constructor(private commitService: CommitService) { }
 
     ngOnInit() {
+        this.getCommits();
+    }
+
+    getCommits(): void {
+        this.commits = this.commitService.getCommits();
     }
 
     onClick(commit: Commit): void {
