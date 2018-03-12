@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CommitsComponent } from './commits/commits.component';
+import { CommitDetailComponent } from './commit-detail/commit-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CommitsComponent
+    CommitsComponent,
+    CommitDetailComponent
   ],
   imports: [
     BrowserModule

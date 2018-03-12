@@ -1,1 +1,8 @@
-{{commit.message}}
+<h2>List of commits</h2>
+<ul>
+    <li *ngFor="let commit of commits"
+        (click)="onClick(commit)"
+        [class.selected]="commit === selectedCommit">{{commit.message}}</li>
+</ul>
+<app-commit-detail [commit]="selectedCommit"></app-commit-detail>
+
