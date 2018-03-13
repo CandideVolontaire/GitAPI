@@ -19,7 +19,7 @@ export class CommitsComponent implements OnInit {
     }
 
     getCommits(): void {
-        this.commits = this.commitService.getCommits();
+        this.commitService.getCommits().subscribe(commits => this.commits = commits);
     }
 
     onClick(commit: Commit): void {
